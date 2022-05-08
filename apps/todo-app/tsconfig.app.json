@@ -1,0 +1,9 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc/apps/todo-app",
+		"types": ["jasmine", "node"]
+	},
+	"files": ["src/main.ts", "src/polyfills.ts"],
+	"include": ["apps/todo-app/src/**/*.d.ts"]
+}

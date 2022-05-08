@@ -1,0 +1,5 @@
+{
+	"environment": "local",
+	"todoServiceUrl": "http://localhost:3333",
+	"loggingServiceUrl": "http://localhost:3334"
+}

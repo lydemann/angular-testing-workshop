@@ -1,0 +1,12 @@
+@import 'helpers';
+
+.nav-item {
+	margin-left: get-size('xxs');
+}
+
+.nav-active {
+	background: get-color('selected');
+}
+a:hover {
+	background-color: #eef4f9;
+}
