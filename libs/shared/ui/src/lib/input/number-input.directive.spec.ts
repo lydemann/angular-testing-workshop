@@ -44,7 +44,7 @@ describe('Directive: NumberInputDirective', () => {
 					expect((spectator.element as HTMLInputElement).value).toBe(val);
 				});
 
-				it('should add thousand separators for 10 digit number and set original value in formControl', () => {
+				it('should add thousand separators for 10 digit number and set original value', () => {
 					spectator.detectChanges();
 					const orgVal = '1234567899';
 					testFormControl.setValue(orgVal);
