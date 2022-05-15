@@ -9,6 +9,7 @@
 /.angular
 
 # dependencies
+coverage/
 /node_modules
 
 # IDEs and editors
