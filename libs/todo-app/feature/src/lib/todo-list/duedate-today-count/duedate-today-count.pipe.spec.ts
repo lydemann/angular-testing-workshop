@@ -3,7 +3,7 @@ import { DuedateTodayCountPipe } from './duedate-today-count.pipe';
 
 describe('DuedateTodayCountPipe', () => {
 	describe('transform', () => {
-		it('have two task that are due today', () => {
+		it('should have two task that are due today', () => {
 			const pipe = new DuedateTodayCountPipe();
 			const todos = [
 				new TodoItem('', '', new Date().toISOString().slice(0, 10)),
