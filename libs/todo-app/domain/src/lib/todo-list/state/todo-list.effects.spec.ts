@@ -4,7 +4,7 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable } from 'rxjs';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import { TodoListResourcesService } from '../resources/todo-list-resources.service';
 import { TodoListActions } from './todo-list.actions';
 import { TodoListEffects } from './todo-list.effects';

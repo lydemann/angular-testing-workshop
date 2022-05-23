@@ -1,9 +1,9 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
-import { SharedDataAccessModule } from './shared-data-access.module';
+import { SharedDataAccessModule } from './shared-domain.module';
 
 describe('SharedDataAccessModule', () => {
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			imports: [SharedDataAccessModule],
 		}).compileComponents();

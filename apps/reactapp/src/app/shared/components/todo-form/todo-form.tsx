@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
 import { AddTodoReactiveFormsComponent } from '@todo/shared/ui';
 import { AngularElementsEvent } from '../../models/angular-elements-output';
+import { TodoItem } from '@todo/shared/domain';
 
 export const TodoForm = ({ todoItem, saveTodo }) => {
 	const onSaveTodo = (event: AngularElementsEvent<TodoItem>) =>

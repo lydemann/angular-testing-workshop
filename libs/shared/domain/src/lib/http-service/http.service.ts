@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map, retry, shareReplay, take } from 'rxjs/operators';
 
-import { LogService } from '@todo/shared/data-access-logging';
+import { LogService } from 'libs/shared/domain/data-access-logging/src';
 
 export const retryCount = 3;
 
@@ -54,11 +54,9 @@ export class HttpService {
 	}
 
 	public authDelete<T = any>(endpoint: string, noop?): Observable<T> {
-		return this.http.delete<T>(endpoint).pipe(
-			retry(retryCount),
-			take(1),
-			catchError(this.handleError<T>()),
-		);
+		return this.http
+			.delete<T>(endpoint)
+			.pipe(retry(retryCount), take(1), catchError(this.handleError<T>()));
 	}
 
 	public authGet<T = any>(

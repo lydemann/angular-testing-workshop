@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import { TodoListActions } from './state/todo-list.actions';
 import { TodoListState } from './state/todo-list.model';
 import {

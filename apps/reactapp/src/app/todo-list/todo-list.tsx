@@ -1,11 +1,11 @@
 import faker from 'faker';
 import React, { useEffect, useState } from 'react';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
 import { CrudItemComponent } from '@todo/shared/ui';
 import TodoForm from '../shared/components/todo-form/todo-form';
 import { AngularElementsEvent } from '../shared/models/angular-elements-output';
 import './todo-list.scss';
+import { TodoItem } from '@todo/shared/domain';
 
 export const TodoList = () => {
 	const [todoList, setTodoList] = useState(getTodoList());

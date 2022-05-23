@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import { TodoListFacadeService } from '@todo/todo-app/domain';
 
 @Component({

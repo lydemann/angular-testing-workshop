@@ -8,7 +8,7 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import { AddTodoComponent, AddTodoReactiveFormsModule } from '@todo/shared/ui';
 import { TodoListFacadeService } from '@todo/todo-app/domain';
 import { TestingModule } from '@todo/todo-app/testing-util';

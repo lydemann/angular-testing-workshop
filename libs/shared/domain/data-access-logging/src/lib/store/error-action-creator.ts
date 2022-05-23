@@ -38,14 +38,12 @@ export type ErrorPropsReturnType<T extends object> = T extends any[]
 export function errorProps<
 	P extends {
 		error: Error | HttpErrorResponse;
-	}
+	},
 >(): ErrorPropsReturnType<P> {
 	// the return type does not match TypePropertyIsNotAllowed, so double casting
 	// is used.
 	// tslint:disable-next-line: no-non-null-assertion
-	return ({ _as: 'props', _p: undefined! } as unknown) as ErrorPropsReturnType<
-		P
-	>;
+	return { _as: 'props', _p: undefined! } as unknown as ErrorPropsReturnType<P>;
 }
 
 export declare interface TypedErrorAction<T extends string>
@@ -81,7 +79,7 @@ export function createErrorAction<T extends string, P extends object>(
 export function createErrorAction<
 	T extends string,
 	P extends any[],
-	R extends object
+	R extends object,
 >(
 	type: T,
 	creator: Creator<P, DisallowArraysAndTypeProperty<R>>,
