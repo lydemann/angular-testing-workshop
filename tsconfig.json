@@ -18,12 +18,9 @@
 			"@questionnaire-app/*": ["apps/questionnaire-app/src/app/*"],
 			"@test-setup-base": ["test-setup.base.ts"],
 			"@todo-app/*": ["apps/todo-app/src/app/*", "apps/todo-app/src/*"],
-			"@todo/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-			"@todo/shared/data-access-logging": [
-				"libs/shared/data-access/data-access-logging/src/index.ts"
-			],
-			"@todo/shared/todo-interfaces": [
-				"libs/shared/interfaces/todo-interfaces/src/index.ts"
+			"@todo/shared/domain": ["libs/shared/domain/src/index.ts"],
+			"@todo/shared/domain-logging": [
+				"libs/shared/domain/data-access-logging/src/index.ts"
 			],
 			"@todo/shared/ui": ["libs/shared/ui/src/index.ts"],
 			"@todo/shared/ui-elements": [

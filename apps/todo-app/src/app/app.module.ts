@@ -10,82 +10,79 @@ import { NxModule } from '@nrwl/nx';
 import { AppInitService } from '@todo-app/app-init.service';
 import { AppComponent } from '@todo-app/app.component';
 import { appRouterModule } from '@todo-app/app.routes';
-import { ApiEndpoints, API_ENDPOINTS } from '@todo/shared/data-access';
+import { ApiEndpoints, API_ENDPOINTS } from '@todo/shared/domain';
+import { GlobalErrorHandler, LogService } from '@todo/shared/domain-logging';
 import {
-	GlobalErrorHandler,
-	LogService,
-} from '@todo/shared/data-access-logging';
-import {
-	FeatureToggleModule,
-	FeatureToggleService,
+  FeatureToggleModule,
+  FeatureToggleService,
 } from '@todo/shared/util-feature-toggle';
 import { environment } from '@todo/todo-app/domain';
 import {
-	LayoutModule,
-	CoreModule,
-	TodoListModule,
+  LayoutModule,
+  CoreModule,
+  TodoListModule,
 } from '@todo/todo-app/feature';
 
 export function init_app(appLoadService: AppInitService) {
-	return () => appLoadService.init();
+  return () => appLoadService.init();
 }
 
 export function preloadFeagureFlags(
-	featureToggleService: FeatureToggleService,
+  featureToggleService: FeatureToggleService
 ) {
-	return () => {
-		return featureToggleService.getFeatureFlags().toPromise();
-	};
+  return () => {
+    return featureToggleService.getFeatureFlags().toPromise();
+  };
 }
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
-	return new TranslateHttpLoader(
-		httpClient,
-		environment.todoServiceUrl + '/i18n/',
-		'-lang.json',
-	);
+  return new TranslateHttpLoader(
+    httpClient,
+    environment.todoServiceUrl + '/i18n/',
+    '-lang.json'
+  );
 }
 
 const apiEndpointsFactory = (): ApiEndpoints => ({
-	todoService: environment.todoServiceUrl,
-	loggingService: environment.loggingServiceUrl,
+  todoService: environment.todoServiceUrl,
+  loggingService: environment.loggingServiceUrl,
 });
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		BrowserAnimationsModule,
-		CoreModule,
-		HttpClientModule,
-		TodoListModule,
-		appRouterModule,
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
-				deps: [HttpClient],
-			},
-		}),
-		ServiceWorkerModule.register('ngsw-worker.js', {
-			enabled: environment.production,
-		}),
-		NxModule.forRoot(),
-		LayoutModule,
-		FeatureToggleModule,
-	],
-	providers: [
-		{
-			provide: APP_INITIALIZER,
-			multi: true,
-			useFactory: preloadFeagureFlags,
-			deps: [FeatureToggleService],
-		},
-		{ provide: API_ENDPOINTS, useFactory: apiEndpointsFactory },
-		{ provide: ErrorHandler, useClass: GlobalErrorHandler },
-		AppInitService,
-		LogService,
-	],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    CoreModule,
+    HttpClientModule,
+    TodoListModule,
+    appRouterModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
+    NxModule.forRoot(),
+    LayoutModule,
+    FeatureToggleModule,
+  ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      useFactory: preloadFeagureFlags,
+      deps: [FeatureToggleService],
+    },
+    { provide: API_ENDPOINTS, useFactory: apiEndpointsFactory },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    AppInitService,
+    LogService,
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
