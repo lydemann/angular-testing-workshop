@@ -1,24 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { fakeAsync, tick } from '@angular/core/testing';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { SpinnerComponent } from './spinner.component';
 
 describe('SpinnerComponent', () => {
-	let component: SpinnerComponent;
-	let fixture: ComponentFixture<SpinnerComponent>;
+	let spectator: Spectator<SpinnerComponent>;
+	const createComponent = createComponentFactory(SpinnerComponent);
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [SpinnerComponent],
-		}).compileComponents();
+	it('should show show refresh tip after spinner time threshold', fakeAsync(() => {
+		spectator = createComponent();
+
+		tick(spectator.component.spinnerTimeThreshold);
+		spectator.detectChanges();
+
+		expect(spectator.query('.spinner-message').innerHTML).toBe(
+			spectator.component.spinnerRefreshTip,
+		);
 	}));
-
-	beforeEach(() => {
-		fixture = TestBed.createComponent(SpinnerComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
-
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
 });

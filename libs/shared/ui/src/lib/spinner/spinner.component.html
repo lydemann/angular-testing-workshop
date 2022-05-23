@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 <div class="container">
 	<div class="row">
 		<div class="loader">
@@ -12,8 +13,9 @@
 			<div class="loading"></div>
 		</div>
 
-		<p class="spinner-message" *ngIf="message && message !== ''">
-			{{ message }}
-		</p>
+		<p
+			class="spinner-message"
+			*ngIf="showSpinnerRefreshTip || (message && message !== '')"
+		>{{ showSpinnerRefreshTip ? spinnerRefreshTip : message }}</p>
 	</div>
 </div>
