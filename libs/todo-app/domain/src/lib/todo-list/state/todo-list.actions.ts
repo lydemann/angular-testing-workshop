@@ -1,10 +1,7 @@
 import { createAction, props, union } from '@ngrx/store';
 
-import {
-	createErrorAction,
-	errorProps,
-} from '@todo/shared/data-access-logging';
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { createErrorAction, errorProps } from '@todo/shared/domain-logging';
+import { TodoItem } from '@todo/shared/domain';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace TodoListActions {

@@ -4,7 +4,7 @@ import { mockProvider, SpyObject } from '@ngneat/spectator/jest';
 import { of } from 'rxjs';
 import { first } from 'rxjs/operators';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import { CrudItemComponent } from '@todo/shared/ui';
 import { TodoListFacadeService } from '@todo/todo-app/domain';
 import { TestingModule } from '@todo/todo-app/testing-util';

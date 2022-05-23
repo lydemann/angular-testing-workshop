@@ -9,8 +9,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ErrorEffects } from '@todo/shared/domain-logging';
 
-import { ErrorEffects } from '@todo/shared/data-access-logging';
 import { environment } from '../environments/environment';
 import { CustomRouterSerializer } from './router.serilization';
 import { todoAppReducers } from './todo-app.reducers';

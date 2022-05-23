@@ -1,4 +1,4 @@
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 import {
 	todoListAdapter,
 	todoListInitState,

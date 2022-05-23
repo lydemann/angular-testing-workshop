@@ -5,7 +5,7 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { TranslateService } from '@ngx-translate/core';
 
 import { AppComponent } from '@todo-app/app.component';
-import { API_ENDPOINTS } from '@todo/shared/data-access';
+import { API_ENDPOINTS } from '@todo/shared/domain';
 import { TodoListFacadeService } from '@todo/todo-app/domain';
 import { FooterComponent } from '@todo/todo-app/feature';
 import { NavbarComponentMock } from 'libs/todo-app/feature/src/lib/layout/navbar/navbar.component.mock';

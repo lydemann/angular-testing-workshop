@@ -6,7 +6,7 @@ export const FEATURE_STORE_ANONYMIZER = new InjectionToken<
 
 export abstract class FeatureStoreAnonymizer<
 	FeatureStoreState,
-	RootState = any
+	RootState = any,
 > {
 	public abstract getFeatureStateName(): keyof RootState;
 

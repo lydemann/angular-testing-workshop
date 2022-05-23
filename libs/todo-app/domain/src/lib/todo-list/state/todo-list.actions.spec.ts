@@ -1,4 +1,4 @@
-import { IS_ERROR_ACTION } from '@todo/shared/data-access-logging';
+import { IS_ERROR_ACTION } from '@todo/shared/domain-logging';
 import { TodoListActions } from './todo-list.actions';
 
 describe('Todo list actions', () => {

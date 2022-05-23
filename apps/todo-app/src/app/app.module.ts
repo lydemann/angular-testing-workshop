@@ -10,11 +10,8 @@ import { NxModule } from '@nrwl/nx';
 import { AppInitService } from '@todo-app/app-init.service';
 import { AppComponent } from '@todo-app/app.component';
 import { appRouterModule } from '@todo-app/app.routes';
-import { ApiEndpoints, API_ENDPOINTS } from '@todo/shared/data-access';
-import {
-	GlobalErrorHandler,
-	LogService,
-} from '@todo/shared/data-access-logging';
+import { ApiEndpoints, API_ENDPOINTS } from '@todo/shared/domain';
+import { GlobalErrorHandler, LogService } from '@todo/shared/domain-logging';
 import {
 	FeatureToggleModule,
 	FeatureToggleService,

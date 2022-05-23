@@ -12,7 +12,7 @@ export class CachedValue<T> {
 export const createFetchCachedValueEffect = <
 	ReturnType,
 	ResponseActionType extends (ReturnType) => any,
-	FailedActionType extends () => any
+	FailedActionType extends () => any,
 >(
 	fetchFn: () => Observable<ReturnType>,
 	responseActionType: ResponseActionType,
