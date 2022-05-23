@@ -1,9 +1,8 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LogService } from '@todo/shared/domain-logging';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, map, retry, shareReplay, take } from 'rxjs/operators';
-
-import { LogService } from 'libs/shared/domain/data-access-logging/src';
 
 export const retryCount = 3;
 
