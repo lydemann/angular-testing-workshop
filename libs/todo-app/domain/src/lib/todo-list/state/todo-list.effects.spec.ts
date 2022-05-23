@@ -31,7 +31,7 @@ describe('TodoListEffects', () => {
 	});
 
 	describe('saveTodoItemRequest', () => {
-		it('should trigger add todo item request', () => {
+		it('should get todo list', () => {
 			const todoList: TodoItem[] = [{ title: '', id: '1', description: '' }];
 			const action = TodoListActions.getTodoListRequest();
 			const outcome = TodoListActions.getTodoListResponse({ todoList });
