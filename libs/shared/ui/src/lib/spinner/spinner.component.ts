@@ -14,7 +14,7 @@ export class SpinnerComponent implements OnDestroy {
 	@Input() spinnerTimeThreshold = SPINNER_REFRESH_TIP_TIME_THRESHOLD;
 	showSpinnerRefreshTip = false;
 
-	private timeout: NodeJS.Timeout;
+	private timeout;
 
 	constructor() {
 		this.timeout = setTimeout(() => {
