@@ -29,14 +29,7 @@ describe('Todo list selectors', () => {
 
 	describe('selectCompletedTodos', () => {
 		it('should return the completed todos', () => {
-			const todos = [
-				{ ...new TodoItem('todo1', 'todo1'), completed: true } as TodoItem,
-				{ ...new TodoItem('todo2', 'todo2'), completed: false } as TodoItem,
-			];
-
-			expect(selectCompletedTodos.projector(todos)).toEqual(
-				todos.filter(todo => todo.completed),
-			);
+			// TODO: implement test
 		});
 	});
 
