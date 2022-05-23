@@ -5,7 +5,7 @@ import {
 	SpectatorHttp,
 } from '@ngneat/spectator/jest';
 
-import { EndpointsService } from '@todo/shared/data-access';
+import { EndpointsService } from '@todo/shared/domain';
 import { TodoListResourcesService } from './todo-list-resources.service';
 
 describe('TodoListResourcesService', () => {

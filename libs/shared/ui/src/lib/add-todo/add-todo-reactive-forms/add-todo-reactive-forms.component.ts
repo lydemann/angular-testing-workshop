@@ -10,8 +10,8 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { TodoItem } from '@todo/shared/domain';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
 import { InvalidDateValidator } from '../../form-validation/invalid-date.directive';
 
 @Component({

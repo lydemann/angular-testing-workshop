@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-import { TodoItem } from '@todo/shared/todo-interfaces';
-import { CrudItemComponent } from './crud-item.component';
+import { TodoItem } from '@todo/shared/domain';
 
 @Component({
 	selector: 'app-crud-item',

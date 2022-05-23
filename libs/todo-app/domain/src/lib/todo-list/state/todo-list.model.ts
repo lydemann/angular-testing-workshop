@@ -1,6 +1,6 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 
 export const todoListAdapter: EntityAdapter<TodoItem> =
 	createEntityAdapter<TodoItem>({

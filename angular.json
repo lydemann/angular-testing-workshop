@@ -394,9 +394,9 @@
 			},
 			"tags": []
 		},
-		"shared-data-access": {
-			"root": "libs/shared/data-access",
-			"sourceRoot": "libs/shared/data-access/src",
+		"shared-domain": {
+			"root": "libs/shared/domain",
+			"sourceRoot": "libs/shared/domain/src",
 			"projectType": "library",
 			"prefix": "todo",
 			"architect": {
@@ -404,8 +404,8 @@
 					"builder": "@nrwl/linter:eslint",
 					"options": {
 						"tsConfig": [
-							"libs/shared/data-access/tsconfig.lib.json",
-							"libs/shared/data-access/tsconfig.spec.json"
+							"libs/shared/domain/tsconfig.lib.json",
+							"libs/shared/domain/tsconfig.spec.json"
 						],
 						"exclude": ["**/node_modules/**"]
 					}
@@ -413,9 +413,9 @@
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
-						"main": "libs/shared/data-access/src/test.ts",
-						"tsConfig": "libs/shared/data-access/tsconfig.spec.json",
-						"karmaConfig": "libs/shared/data-access/karma.conf.js"
+						"main": "libs/shared/domain/src/test.ts",
+						"tsConfig": "libs/shared/domain/tsconfig.spec.json",
+						"karmaConfig": "libs/shared/domain/karma.conf.js"
 					}
 				}
 			},
@@ -424,11 +424,11 @@
 					"styleext": "scss"
 				}
 			},
-			"tags": ["type:data-access", "scope:shared"]
+			"tags": ["type:domain", "scope:shared"]
 		},
-		"shared-data-access-logging": {
-			"root": "libs/shared/data-access/data-access-logging",
-			"sourceRoot": "libs/shared/data-access/data-access-logging/src",
+		"shared-domain-logging": {
+			"root": "libs/shared/domain/data-access-logging",
+			"sourceRoot": "libs/shared/domain/data-access-logging/src",
 			"projectType": "library",
 			"schematics": {},
 			"architect": {
@@ -436,46 +436,17 @@
 					"builder": "@nrwl/linter:eslint",
 					"options": {
 						"tsConfig": [
-							"libs/shared/data-access/data-access-logging/tsconfig.lib.json",
-							"libs/shared/data-access/data-access-logging/tsconfig.spec.json"
+							"libs/shared/domain/data-access-logging/tsconfig.lib.json",
+							"libs/shared/domain/data-access-logging/tsconfig.spec.json"
 						],
 						"exclude": [
 							"**/node_modules/**",
-							"!libs/shared/data-access/data-access-logging/**"
+							"!libs/shared/domain/data-access-logging/**"
 						]
 					}
 				}
 			},
-			"tags": ["scope:shared", "type:data-access"]
-		},
-		"shared-interfaces-todo-interfaces": {
-			"root": "libs/shared/interfaces/todo-interfaces",
-			"sourceRoot": "libs/shared/interfaces/todo-interfaces/src",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"lint": {
-					"builder": "@nrwl/linter:eslint",
-					"options": {
-						"tsConfig": [
-							"libs/shared/interfaces/todo-interfaces/tsconfig.lib.json",
-							"libs/shared/interfaces/todo-interfaces/tsconfig.spec.json"
-						],
-						"exclude": [
-							"**/node_modules/**",
-							"!libs/shared/interfaces/todo-interfaces/**"
-						]
-					}
-				},
-				"test": {
-					"builder": "@nrwl/jest:jest",
-					"options": {
-						"jestConfig": "libs/shared/interfaces/todo-interfaces/jest.config.js",
-						"passWithNoTests": true
-					}
-				}
-			},
-			"tags": ["type:interface", "scope:shared"]
+			"tags": ["scope:shared", "type:domain"]
 		},
 		"shared-styles": {
 			"root": "libs/shared/ui/styles",

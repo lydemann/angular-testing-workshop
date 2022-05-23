@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoItem } from '@todo/shared/todo-interfaces';
+import { TodoItem } from '@todo/shared/domain';
 
 import { TodoListFacadeService } from '@todo/todo-app/domain';
 import { Observable } from 'rxjs';

@@ -148,9 +148,9 @@
 						]
 					},
 					{
-						"sourceTag": "type:data-access",
+						"sourceTag": "type:domain",
 						"onlyDependOnLibsWithTags": [
-							"type:data-access",
+							"type:domain",
 							"type:util",
 							"type:interface"
 						]

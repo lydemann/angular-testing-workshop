@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import { EndpointsService } from '@todo/shared/data-access';
-import { LogService } from '@todo/shared/data-access-logging';
+import { EndpointsService } from '@todo/shared/domain';
+import { LogService } from '@todo/shared/domain-logging';
 import { ThemeService } from '@todo/shared/ui-styles';
 import { environment, TodoListFacadeService } from '@todo/todo-app/domain';
 
