@@ -33,7 +33,7 @@ module.exports = (config, context) => {
  * @returns {Array} An array of Webpack plugins
  */
 function extractRelevantNodeModules(outputPath) {
-	return [copyYarnLockFile(outputPath), generatePackageJson()];
+	return [copyYarnLockFile(outputPath)];
 }
 
 /**
@@ -44,9 +44,9 @@ function extractRelevantNodeModules(outputPath) {
  * @returns {*} A Webpack plugin
  */
 function copyYarnLockFile(outputPath) {
-	return new CopyPlugin([
-		{ from: 'yarn.lock', to: path.join(outputPath, 'yarn.lock') },
-	]);
+	return new CopyPlugin({
+		patterns: [{ from: 'yarn.lock', to: path.join(outputPath, 'yarn.lock') }],
+	});
 }
 
 /**
@@ -56,13 +56,7 @@ function copyYarnLockFile(outputPath) {
  * @returns {*} A Webpack plugin
  */
 function generatePackageJson() {
-	const implicitDeps = [
-		'class-transformer',
-		'class-validator',
-		'@nestjs/platform-express',
-		'reflect-metadata',
-		'rxjs',
-	];
+	const implicitDeps = ['@nestjs/platform-express', 'reflect-metadata', 'rxjs'];
 	const dependencies = implicitDeps.reduce((acc, dep) => {
 		acc[dep] = packageJson.dependencies[dep];
 		return acc;

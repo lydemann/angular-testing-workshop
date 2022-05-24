@@ -10,6 +10,12 @@
 				"devServerTarget": "todo-app:serve:development"
 			},
 			"configurations": {
+				"integration": {
+					"spec": "apps/todo-app-e2e/src/integration/integration/**/*.spec.ts"
+				},
+				"e2e": {
+					"spec": "apps/todo-app-e2e/src/integration/e2e/**/*.spec.ts"
+				},
 				"production": {
 					"devServerTarget": "todo-app:serve:production"
 				}

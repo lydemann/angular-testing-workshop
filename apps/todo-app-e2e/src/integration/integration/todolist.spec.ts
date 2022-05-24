@@ -1,4 +1,4 @@
-import { TodoPage } from '../support/todo.po';
+import { TodoPage } from '../../support/todo.po';
 
 describe('Todolist', () => {
 	beforeEach(() => {
