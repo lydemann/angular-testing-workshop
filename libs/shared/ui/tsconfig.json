@@ -3,5 +3,10 @@
 	"compilerOptions": {
 		"types": ["node", "jest"]
 	},
-	"include": ["**/*.ts"]
+	"include": ["**/*.ts"],
+	"references": [
+		{
+			"path": "./.storybook/tsconfig.json"
+		}
+	]
 }

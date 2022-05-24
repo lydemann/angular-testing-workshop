@@ -1,7 +1,6 @@
 {
 	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
 	"version": 1,
-	"defaultProject": "todo-app",
 	"projects": {
 		"designsystemdemo": {
 			"projectType": "application",
@@ -503,6 +502,45 @@
 							"includePaths": ["libs/shared/ui/styles/src/lib"]
 						}
 					}
+				},
+				"storybook": {
+					"builder": "@nrwl/storybook:storybook",
+					"options": {
+						"uiFramework": "@storybook/angular",
+						"port": 4400,
+						"config": {
+							"configFolder": "libs/shared/ui/.storybook"
+						},
+						"stylePreprocessorOptions": {
+							"includePaths": ["libs/shared/ui/styles/src/lib"]
+						},
+						"projectBuildConfig": "shared-ui:build-storybook"
+					},
+					"configurations": {
+						"ci": {
+							"quiet": true
+						}
+					}
+				},
+				"build-storybook": {
+					"builder": "@nrwl/storybook:build",
+					"outputs": ["{options.outputPath}"],
+					"options": {
+						"uiFramework": "@storybook/angular",
+						"outputPath": "dist/storybook/shared-ui",
+						"config": {
+							"configFolder": "libs/shared/ui/.storybook"
+						},
+						"stylePreprocessorOptions": {
+							"includePaths": ["libs/shared/ui/styles/src/lib"]
+						},
+						"projectBuildConfig": "shared-ui:build-storybook"
+					},
+					"configurations": {
+						"ci": {
+							"quiet": true
+						}
+					}
 				}
 			},
 			"schematics": {
@@ -511,6 +549,34 @@
 				}
 			},
 			"tags": ["type:ui", "scope:shared"]
+		},
+		"shared-ui-e2e": {
+			"root": "apps/shared-ui-e2e",
+			"sourceRoot": "apps/shared-ui-e2e/src",
+			"projectType": "application",
+			"architect": {
+				"e2e": {
+					"builder": "@nrwl/cypress:cypress",
+					"options": {
+						"cypressConfig": "apps/shared-ui-e2e/cypress.json",
+						"devServerTarget": "shared-ui:storybook"
+					},
+					"configurations": {
+						"ci": {
+							"devServerTarget": "shared-ui:storybook:ci"
+						}
+					}
+				},
+				"lint": {
+					"builder": "@nrwl/linter:eslint",
+					"outputs": ["{options.outputFile}"],
+					"options": {
+						"lintFilePatterns": ["apps/shared-ui-e2e/**/*.{js,ts}"]
+					}
+				}
+			},
+			"tags": [],
+			"implicitDependencies": ["shared-ui"]
 		},
 		"shared-util": {
 			"root": "libs/shared/util",
@@ -734,7 +800,6 @@
 			},
 			"tags": ["type:e2e"]
 		},
-		"todo-app": "apps/todo-app",
 		"todo-app-domain": {
 			"projectType": "library",
 			"root": "libs/todo-app/domain",
@@ -761,7 +826,6 @@
 			},
 			"tags": ["type:domain", "scope:todo-app"]
 		},
-		"todo-app-e2e": "apps/todo-app-e2e",
 		"todo-app-feature": {
 			"projectType": "library",
 			"root": "libs/todo-app/feature",
