@@ -5,7 +5,7 @@
 		"ng": "ng",
 		"start": "nx serve",
 		"start:todo": "concurrently \"ng serve -o todo-app\" \"npm run start:todo-server\"",
-		"start:todo-server": "ng serve todo-service",
+		"start:todo-server": "nx serve todo-service",
 		"build": "nx build",
 		"build:prod": "nx build --prod",
 		"build:ui-elements": "nx build shared-ui --output-hashing=none",
