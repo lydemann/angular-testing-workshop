@@ -800,6 +800,7 @@
 			},
 			"tags": ["type:e2e"]
 		},
+		"todo-app-e2e": "apps/todo-app-e2e",
 		"todo-app-domain": {
 			"projectType": "library",
 			"root": "libs/todo-app/domain",
@@ -826,6 +827,7 @@
 			},
 			"tags": ["type:domain", "scope:todo-app"]
 		},
+		"todo-app": "apps/todo-app",
 		"todo-app-feature": {
 			"projectType": "library",
 			"root": "libs/todo-app/feature",
@@ -851,32 +853,6 @@
 				}
 			},
 			"tags": ["scope:todo-app", "type:feature"]
-		},
-		"todo-app-testing-util": {
-			"projectType": "library",
-			"root": "libs/todo-app/testing-util",
-			"sourceRoot": "libs/todo-app/testing-util/src",
-			"prefix": "todo",
-			"architect": {
-				"test": {
-					"builder": "@nrwl/jest:jest",
-					"outputs": ["coverage/libs/todo-app/testing-util"],
-					"options": {
-						"jestConfig": "libs/todo-app/testing-util/jest.config.ts",
-						"passWithNoTests": true
-					}
-				},
-				"lint": {
-					"builder": "@nrwl/linter:eslint",
-					"options": {
-						"lintFilePatterns": [
-							"libs/todo-app/testing-util/**/*.ts",
-							"libs/todo-app/testing-util/**/*.html"
-						]
-					}
-				}
-			},
-			"tags": ["scope:todo-app", "type:util"]
 		},
 		"todo-service": {
 			"root": "apps/todo-service",
