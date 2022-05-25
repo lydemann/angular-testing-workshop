@@ -8014,6 +8014,11 @@ chownr@~1.0.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
   integrity sha512-cKnqUJAC8G6cuN1DiRRTifu+s1BlAQNtalzGphFEV0pl0p46dsxJD4l1AOlyKJeLZOFzo3c34R7F3djxaCu8Kw==
 
+chromatic@^6.5.4:
+  version "6.5.4"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.5.4.tgz#2e1beb7a8f6b84e7575456fe484201a3b4327ee1"
+  integrity sha512-/yunI/+rdc56C6x0IhpPmdfK/DRMOvQ2hoNyAe6uuU9rdWRoAH72lYatr2NcpdsOdHGOcV5DKgIaKgVdPfUk1w==
+
 chrome-trace-event@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/chrome-trace-event/-/chrome-trace-event-1.0.3.tgz#1015eced4741e15d06664a957dbbf50d041e26ac"
