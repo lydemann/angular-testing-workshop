@@ -1,4 +1,4 @@
-import { guidelinesStory } from '../guidelines.story';
+import { guidelinesStory } from '../guidelines.stories';
 import { ColorComponent } from './color.component';
 
 guidelinesStory.add('Palette', () => ({

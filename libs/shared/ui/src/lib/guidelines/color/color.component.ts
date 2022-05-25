@@ -40,12 +40,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class ColorComponent {
 	public colors = [
-		[['primary', 'Primary'], ['accent', 'Accent'], ['warn', 'Warn']],
+		[
+			['primary', 'Primary'],
+			['accent', 'Accent'],
+			['warn', 'Warn'],
+		],
 		[
 			['background', 'Background'],
 			['selected', 'Selected'],
 			['hover', 'Hover'],
 		],
-		[['black', 'Black'], ['white', 'White']],
+		[
+			['black', 'Black'],
+			['white', 'White'],
+		],
 	];
 }
