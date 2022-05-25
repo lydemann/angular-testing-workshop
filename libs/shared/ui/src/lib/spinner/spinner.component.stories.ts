@@ -19,9 +19,9 @@ const Template: Story<SpinnerComponent> = (args: SpinnerComponent) => ({
 	props: args,
 });
 
-export const Primary = Template.bind({});
+export const Primary: Story<SpinnerComponent> = Template.bind({});
 Primary.args = {
-	message: '',
+	message: 'Loading...',
 	spinnerRefreshTip: 'It is taking some time, consider refreshing...',
 	spinnerTimeThreshold: SPINNER_REFRESH_TIP_TIME_THRESHOLD,
 };
